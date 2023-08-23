@@ -25,7 +25,7 @@ class StoreAnimalRequest extends FormRequest
     {
         return [
             'name' => 'required|max:20',
-            'specie' => 'required|max:30',
+            'specie' => 'nullable|max:30',
             'date_of_birth' => 'nullable|date_format:Y-m-d|min:3|max:255',
             'genre' => 'required|boolean',
             'owner' => 'required|max:20',
