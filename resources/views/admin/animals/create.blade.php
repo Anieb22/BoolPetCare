@@ -33,7 +33,11 @@
                     {{-- GENERE - M/F --}}
                     <div class="form-group">
                         <label for="" class="control-label">Genere</label>
-                        <input type="text"class="form-control" id="genre" name="genre">
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                          <option selected>Open this select menu</option>
+                          <option value="1">Maschio</option>
+                          <option value="0">Femmina</option>
+                        </select>
                     </div>
 
                     {{-- PROPRIETARIO --}}

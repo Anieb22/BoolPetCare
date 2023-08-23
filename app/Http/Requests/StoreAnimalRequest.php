@@ -13,7 +13,7 @@ class StoreAnimalRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class StoreAnimalRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:20',
+            'specie' => 'required|max:30',
+            'date_of_birth' => 'nullable|date_format:Y-m-d|min:3|max:255',
+            'genre' => 'required|boolean',
+            'owner' => 'required|max:20',
+            'note' => 'required|min:10|max:255',
         ];
     }
 }
