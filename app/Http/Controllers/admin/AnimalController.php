@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Animal;
 use App\Http\Requests\StoreAnimalRequest;
@@ -27,7 +27,7 @@ class AnimalController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.animals.create');
     }
 
     /**
