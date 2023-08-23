@@ -38,7 +38,20 @@ class AnimalController extends Controller
      */
     public function store(StoreAnimalRequest $request)
     {
-        //
+        $form_data = $request->all();
+
+        $animal = new Animal();
+        $animal->name = $form_data['name'];
+        $animal->specie = $form_data['specie'];
+        $animal->date_of_birth = $form_data['date_of_birth'];
+        $animal->genre = $form_data['genre'];
+        $animal->owner = $form_data['owner'];
+        $animal->note = $form_data['note'];        
+        
+        $animal->save();
+
+        return redirect()->route('admin.animals.index');
+
     }
 
     /**

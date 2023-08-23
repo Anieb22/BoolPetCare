@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-9 my-5">
                 <button type="button" class="btn btn-primary">
-                    <a href="#" class="link-underline link-underline-opacity-0 link-light">
+                    <a href="{{route('admin.animals.create')}}" class="link-underline link-underline-opacity-0 link-light">
                         Aggiungi Paziente
                     </a>
                 </button>
