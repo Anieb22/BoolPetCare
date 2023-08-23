@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 @extends('layouts.admin')
 @section('content')
 <div class="container">
@@ -54,4 +52,3 @@
         </div>
     </div>
 @endsection
->>>>>>> Stashed changes

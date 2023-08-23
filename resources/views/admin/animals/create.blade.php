@@ -7,7 +7,16 @@
         <h4 class='mt-4'>Compila la form e aggiungi un paziente peloso, piumato o rugoso</h4>
 
         <div class="row">
-            <div class="col-12">
+            <div class="col-9">
+                @if ($errors->any())
+                    <div class="alert alert-warning" role="alert">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
                 {{-- INIZIO FORM --}}
                 <form action="{{route('admin.animals.store')}}" method="POST">
@@ -33,9 +42,8 @@
                     {{-- GENERE - M/F --}}
                     <div class="form-group">
                         <label for="" class="control-label">Genere</label>
-                        <select class="form-select form-select-sm" aria-label="Small select example">
-                          <option selected>Open this select menu</option>
-                          <option value="1">Maschio</option>
+                        <select class="form-select form-select-sm" aria-label="Small select example" id="genre" name="genre">
+                          <option selected value="1">Maschio</option>
                           <option value="0">Femmina</option>
                         </select>
                     </div>
@@ -52,8 +60,12 @@
                         <textarea type="text"class="form-control" id="note" name="note"></textarea>
                     </div>
 
-                    
-                    <a class="btn btn-md btn-primary mb-5" href="{{route('admin.animals.index')}}">Torna alla home</a>
+                    <div class="col-12 d-flex justify-content-between">
+                        <a class="btn btn-md btn-primary" href="{{route('admin.animals.index')}}">Torna alla home</a>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Aggiungi Paziente</button>
+                        </div>
+                    </div>
                     
 
                 </form>
