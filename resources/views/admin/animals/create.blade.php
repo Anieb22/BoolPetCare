@@ -27,7 +27,7 @@
                     {{-- DATA DI NASCITA --}}
                     <div class="form-group">
                         <label for="" class="control-label">Data di nascita</label>
-                        <input type="text"class="form-control" id="date_of_birth" name="date_of_birth">
+                        <input type="date"class="form-control" id="date_of_birth" name="date_of_birth">
                     </div>
 
                     {{-- GENERE - M/F --}}
@@ -53,7 +53,7 @@
                     </div>
 
                     
-                    <a class="btn btn-md btn-primary mb-5" href="">Torna alla home</a>
+                    <a class="btn btn-md btn-primary mb-5" href="{{route('admin.animals.index')}}">Torna alla home</a>
                     
 
                 </form>
