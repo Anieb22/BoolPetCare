@@ -24,19 +24,19 @@
                     {{-- NOME --}}
                     <div class="form-group">
                         <label for="" class="control-label">Nome</label>
-                        <input type="text"class="form-control" id="name" name="name">
+                        <input type="text"class="form-control" id="name" name="name" value="{{ old('name') ?? $animal->name }}">
                     </div>
 
                     {{-- SPECIE --}}
                     <div class="form-group">
                         <label for="" class="control-label">Specie</label>
-                        <input type="text"class="form-control" id="specie" name="specie">
+                        <input type="text"class="form-control" id="specie" name="specie" value="{{ old('specie') ?? $animal->specie }}">
                     </div>
 
                     {{-- DATA DI NASCITA --}}
                     <div class="form-group">
                         <label for="" class="control-label">Data di nascita</label>
-                        <input type="date"class="form-control" id="date_of_birth" name="date_of_birth">
+                        <input type="date"class="form-control" id="date_of_birth" name="date_of_birth" value="{{ old('date_of_birth') ?? $animal->date_of_birth }}">
                     </div>
 
                     {{-- GENERE - M/F --}}
@@ -51,19 +51,19 @@
                     {{-- PROPRIETARIO --}}
                     <div class="form-group">
                         <label for="" class="control-label">Nome del proprietario</label>
-                        <input type="text"class="form-control" id="owner" name="owner">
+                        <input type="text"class="form-control" id="owner" name="owner" value="{{ old('owner') ?? $animal->owner }}">
                     </div>
 
                     {{-- NOTE --}}
                     <div class="form-group mb-3">
                         <label for="" class="control-label">Note aggiuntive</label>
-                        <textarea type="text"class="form-control" id="note" name="note"></textarea>
+                        <textarea type="text"class="form-control" id="note" name="note">{{ old('note') ?? $animal->note }}</textarea>
                     </div>
 
                     <div class="col-12 d-flex justify-content-between">
                         <a class="btn btn-md btn-primary" href="{{route('admin.animals.index')}}">Torna alla home</a>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Aggiungi Paziente</button>
+                            <button type="submit" class="btn btn-primary">Modifica Paziente</button>
                         </div>
                     </div>
                     
