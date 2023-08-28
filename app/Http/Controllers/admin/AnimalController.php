@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Animal;
 use App\Http\Requests\StoreAnimalRequest;
@@ -16,7 +16,8 @@ class AnimalController extends Controller
      */
     public function index()
     {
-        //
+        $animals = Animal::all();
+        return view('admin.animals.index', compact('animals'));
     }
 
     /**
@@ -26,7 +27,7 @@ class AnimalController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.animals.create');
     }
 
     /**
@@ -37,7 +38,20 @@ class AnimalController extends Controller
      */
     public function store(StoreAnimalRequest $request)
     {
-        //
+        $form_data = $request->all();
+
+        $animal = new Animal();
+        $animal->name = $form_data['name'];
+        $animal->specie = $form_data['specie'];
+        $animal->date_of_birth = $form_data['date_of_birth'];
+        $animal->genre = $form_data['genre'];
+        $animal->owner = $form_data['owner'];
+        $animal->note = $form_data['note'];        
+        
+        $animal->save();
+
+        return redirect()->route('admin.animals.index');
+
     }
 
     /**
@@ -48,7 +62,7 @@ class AnimalController extends Controller
      */
     public function show(Animal $animal)
     {
-        //
+        return view('admin.animals.show', compact('animal'));
     }
 
     /**
