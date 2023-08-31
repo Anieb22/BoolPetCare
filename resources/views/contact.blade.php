@@ -21,12 +21,24 @@
                 {{-- INIZIO FORM --}}
                 <form action="{{ route('admin.animals.store') }}" method="POST">
                     @csrf
+                    {{-- CAMPO NOME --}}
                     <div class="mb-3">
-                        <label for="email" class="form-label">Indirizzo Mail: </label>
+                        <label for="email" class="form-label"><strong><em>Il tuo nome: </em></strong> </label>
                         <input type="email" class="form-control" id="email" placeholder="nome@esempio.com">
                     </div>
+                    {{-- CAMPO COGNOME --}}
                     <div class="mb-3">
-                        <label for="infotext" class="form-label">Richieste e info:</label>
+                        <label for="email" class="form-label"><strong><em>Il tuo cognome: </em></strong> </label>
+                        <input type="email" class="form-control" id="email" placeholder="nome@esempio.com">
+                    </div>
+                    {{-- CAMPO E-MAIL --}}
+                    <div class="mb-3">
+                        <label for="email" class="form-label"><strong><em>Indirizzo Mail: </em></strong> </label>
+                        <input type="email" class="form-control" id="email" placeholder="nome@esempio.com">
+                    </div>
+                    {{-- CAMPO TESTO INFORMAZIONI --}}
+                    <div class="mb-3">
+                        <label for="infotext" class="form-label"><strong><em>Richieste e info: </em></strong></label>
                         <textarea class="form-control" id="infotext" rows="3"></textarea>
                     </div>
                 </form>
