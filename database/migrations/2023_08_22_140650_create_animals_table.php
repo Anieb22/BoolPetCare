@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
             $table->string('name', 20);
-            $table->string('specie', 30);
-            $table->date('date_of_birth');
+            $table->string('specie', 30)->nullable();
+            $table->date('date_of_birth')->nullable();
             $table->boolean('genre');
             $table->string('owner', 20);
             $table->longtext('note');

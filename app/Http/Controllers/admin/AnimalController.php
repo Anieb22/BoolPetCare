@@ -73,7 +73,7 @@ class AnimalController extends Controller
      */
     public function edit(Animal $animal)
     {
-        //
+        return view('admin.animals.edit', compact('animal'));
     }
 
     /**
@@ -85,7 +85,18 @@ class AnimalController extends Controller
      */
     public function update(UpdateAnimalRequest $request, Animal $animal)
     {
-        //
+        $form_data = $request->all();
+
+        $animal->name = $form_data['name'];
+        $animal->specie = $form_data['specie'];
+        $animal->date_of_birth = $form_data['date_of_birth'];
+        $animal->genre = $form_data['genre'];
+        $animal->owner = $form_data['owner'];
+        $animal->note = $form_data['note'];        
+        
+        $animal->update($form_data);
+
+        return redirect()->route('admin.animals.index');
     }
 
     /**
@@ -96,6 +107,7 @@ class AnimalController extends Controller
      */
     public function destroy(Animal $animal)
     {
-        //
+        $animal->delete();
+        return redirect()->route('admin.animals.index');
     }
 }
