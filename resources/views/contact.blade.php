@@ -23,13 +23,13 @@
                     @csrf
                     {{-- CAMPO NOME --}}
                     <div class="mb-3">
-                        <label for="email" class="form-label"><strong><em>Il tuo nome: </em></strong> </label>
-                        <input type="email" class="form-control" id="email" placeholder="nome@esempio.com">
+                        <label for="name" class="form-label"><strong><em>Il tuo nome: </em></strong> </label>
+                        <input type="text" class="form-control" id="name" placeholder="Mario">
                     </div>
                     {{-- CAMPO COGNOME --}}
                     <div class="mb-3">
-                        <label for="email" class="form-label"><strong><em>Il tuo cognome: </em></strong> </label>
-                        <input type="email" class="form-control" id="email" placeholder="nome@esempio.com">
+                        <label for="surname" class="form-label"><strong><em>Il tuo cognome: </em></strong> </label>
+                        <input type="text" class="form-control" id="surname" placeholder="Rossi">
                     </div>
                     {{-- CAMPO E-MAIL --}}
                     <div class="mb-3">
