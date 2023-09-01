@@ -19,7 +19,7 @@
                 @endif
 
                 {{-- INIZIO FORM --}}
-                <form action="{{route('admin.animals.store')}}" method="POST">
+                <form action="{{route('admin.animals.update', $animal->id)}}" method="POST">
                     @csrf
                     {{-- NOME --}}
                     <div class="form-group">
@@ -59,6 +59,18 @@
                         <label for="" class="control-label">Note aggiuntive</label>
                         <textarea type="text"class="form-control" id="note" name="note">{{ old('note') ?? $animal->note }}</textarea>
                     </div>
+                    
+                    <div class="form-group mb-4">
+                        <div>Seleziona la vaccinazione</div>
+                            <select class="form-control" name="vaccination[]">
+                                <option value="">Seleziona una tipologia di vaccino</option>
+                                
+                                @foreach($vaccinations as $vaccination)
+                                    <option {{ $vaccination->id }} value="{{ $vaccination->id }}">{{ $vaccination->type }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="col-12 d-flex justify-content-between">
                         <a class="btn btn-md btn-primary" href="{{route('admin.animals.index')}}">Torna alla home</a>
@@ -66,14 +78,8 @@
                             <button type="submit" class="btn btn-primary">Modifica Paziente</button>
                         </div>
                     </div>
-                    
-
                 </form>
-
             </div>
         </div>
-
-
-
     </div>
 @endsection

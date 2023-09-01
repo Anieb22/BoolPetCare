@@ -60,20 +60,26 @@
                         <textarea type="text"class="form-control" id="note" name="note"></textarea>
                     </div>
 
+                    <div class="form-group mb-3">
+                        <div>Seleziona la vaccinazione</div>
+                            <select class="form-control" name="vaccination[]">
+                                <option value="">Seleziona una tipologia di vaccino</option>
+                                
+                                @foreach($vaccinations as $vaccination)
+                                    <option {{ $vaccination->id }} value="{{ $vaccination->id }}">{{ $vaccination->type }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="col-12 d-flex justify-content-between">
                         <a class="btn btn-md btn-primary" href="{{route('admin.animals.index')}}">Torna alla home</a>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Aggiungi Paziente</button>
                         </div>
                     </div>
-                    
-
                 </form>
-
             </div>
         </div>
-
-
-
     </div>
 @endsection

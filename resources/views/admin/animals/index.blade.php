@@ -37,16 +37,16 @@
                       <td>{{ $animal->owner }}</td>
                       <td>
                         <button type="button" class="btn btn-primary">
-                            <a href="{{route('admin.animals.show', ['animal' => $animal])}}" class="link-underline link-underline-opacity-0 link-light">
+                            <a href="{{route('admin.animals.show', $animal->id)}}" class="link-underline link-underline-opacity-0 link-light">
                                 <i class="fas fa-eye"></i>
                             </a>
                         </button>
-                        <form action="{{ route('admin.animals.destroy', ['animal' => $animal]) }}" method="post" class="d-inline">
+                        <form action="{{ route('admin.animals.destroy', $animal->id) }}" method="post" class="d-inline">
                           @csrf
                           @method('DELETE')
                         <button type="submit" class="btn btn-danger"><i class="fas fa-trash-can"></i></button>
                         </form>                          
-                      <button type="button" class="btn btn-warning"><a href="{{ route('admin.animals.edit', ['animal' => $animal]) }}" class="link-underline link-underline-opacity-0 link-dark"><i class="fas fa-pen"></i></a></button>
+                      <button type="button" class="btn btn-warning"><a href="{{ route('admin.animals.edit', $animal->id) }}" class="link-underline link-underline-opacity-0 link-dark"><i class="fas fa-pen"></i></a></button>
                       </td>
                     </tr>
                     @endforeach
