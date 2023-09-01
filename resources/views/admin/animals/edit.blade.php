@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 
-{{-- FORM PER INSERIRE NUOVI PAZIENTI ANIMALI :3 --}}
 @section('content')
     <div class="container">
 
@@ -28,19 +27,17 @@
                         <input type="text"class="form-control" id="name" name="name" value="{{ old('name') ?? $animal->name }}">
                     </div>
 
-                    {{-- SPECIE --}}
                     <div class="form-group">
                         <label for="" class="control-label">Specie</label>
                         <input type="text"class="form-control" id="specie" name="specie" value="{{ old('specie') ?? $animal->specie }}">
                     </div>
 
-                    {{-- DATA DI NASCITA --}}
+                    
                     <div class="form-group">
                         <label for="" class="control-label">Data di nascita</label>
                         <input type="date"class="form-control" id="date_of_birth" name="date_of_birth" value="{{ old('date_of_birth') ?? $animal->date_of_birth }}">
                     </div>
 
-                    {{-- GENERE - M/F --}}
                     <div class="form-group">
                         <label for="" class="control-label">Genere</label>
                         <select class="form-select form-select-sm" aria-label="Small select example" id="genre" name="genre">
@@ -49,16 +46,28 @@
                         </select>
                     </div>
 
-                    {{-- PROPRIETARIO --}}
+                
                     <div class="form-group">
                         <label for="" class="control-label">Nome del proprietario</label>
                         <input type="text"class="form-control" id="owner" name="owner" value="{{ old('owner') ?? $animal->owner }}">
                     </div>
 
-                    {{-- NOTE --}}
+                   
                     <div class="form-group mb-3">
                         <label for="" class="control-label">Note aggiuntive</label>
                         <textarea type="text"class="form-control" id="note" name="note">{{ old('note') ?? $animal->note }}</textarea>
+                    </div>
+                    
+                    <div class="form-group mb-4">
+                        <div>Seleziona la vaccinazione</div>
+                            <select class="form-control" name="vaccination[]">
+                                <option value="">Seleziona una tipologia di vaccino</option>
+                                
+                                @foreach($vaccinations as $vaccination)
+                                    <option {{ $vaccination->id }} value="{{ $vaccination->id }}">{{ $vaccination->type }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
 
                     <div class="col-12 d-flex justify-content-between">
@@ -67,14 +76,8 @@
                             <button type="submit" class="btn btn-primary">Modifica Paziente</button>
                         </div>
                     </div>
-                    
-
                 </form>
-
             </div>
         </div>
-
-
-
     </div>
 @endsection
