@@ -1,6 +1,19 @@
 @extends('layouts.app')
 @section('content')
 
+<div id="carouselExampleSlidesOnly" class="carousel slide position-relative" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{ Vite::asset('resources\img\krista-mangulsone-9gz3wfHr65U-unsplash.jpg')}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{ Vite::asset('resources\img\andrew-s-ouo1hbizWwo-unsplash.jpg')}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{ Vite::asset('resources/img/kate-stone-matheson-uy5t-CJuIK4-unsplash.jpg')}}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
 <div class="jumbotron p-5 mb-4 bg-light rounded-3">
     <div class="container py-5">
         <div class="logo_laravel">

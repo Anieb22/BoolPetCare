@@ -19,8 +19,9 @@
                 @endif
 
                 {{-- INIZIO FORM --}}
-                <form action="{{route('admin.animals.store')}}" method="POST">
+                <form action="{{route('admin.animals.update', $animal->id)}}" method="POST">
                     @csrf
+                    @method('PUT')
                     {{-- NOME --}}
                     <div class="form-group">
                         <label for="" class="control-label">Nome</label>
