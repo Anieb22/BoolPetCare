@@ -27,6 +27,8 @@ Route::post('contacts', [ContactController::class, 'store'])->name('contacts.sto
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('animals', AnimalController::class);
+    Route::resource('vaccinations', VaccinationController::class);
+
 });
 
 Route::middleware('auth')->group(function () {

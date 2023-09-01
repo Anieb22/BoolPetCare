@@ -25,13 +25,9 @@
 
     <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class="logo_laravel">
-                        <div class="col-5">
-                            <img src="{{ Vite::asset('resources\img\BoolPetCare@4x.png')}}" class="w-25" alt="">
-                            
-                        </div>
-                        </svg>
+                <a class="navbar-brand d-flex align-items-center col-1" href="{{ url('/') }}">
+                    <div class="logo_laravel w-100">
+                            <img src="{{ Vite::asset('resources\img\BoolPetCare@4x.png')}}" class="w-100" alt="">
                     </div>
                     {{-- config('app.name', 'Laravel') --}}
                 </a>

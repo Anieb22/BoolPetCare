@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Animal;
+use App\Models\Vaccination;
 use App\Http\Requests\StoreAnimalRequest;
 use App\Http\Requests\UpdateAnimalRequest;
 use App\Http\Controllers\Controller;
@@ -30,7 +31,8 @@ class AnimalController extends Controller
      */
     public function create()
     {
-        return view('admin.animals.create');
+        $vaccinations = Vaccination::all();
+        return view('admin.animals.create', compact('vaccinations'));
     }
 
     /**
@@ -44,14 +46,14 @@ class AnimalController extends Controller
         $form_data = $request->all();
 
         $animal = new Animal();
-        $animal->name = $form_data['name'];
-        $animal->specie = $form_data['specie'];
-        $animal->date_of_birth = $form_data['date_of_birth'];
-        $animal->genre = $form_data['genre'];
-        $animal->owner = $form_data['owner'];
-        $animal->note = $form_data['note'];        
+        
+        $animal->fill($form_data);
         
         $animal->save();
+
+        if($request->has('vaccinations')){
+            $animal->vaccinations()->attach($request->vaccinations);
+        }
 
         return redirect()->route('admin.animals.index');
 
@@ -76,7 +78,8 @@ class AnimalController extends Controller
      */
     public function edit(Animal $animal)
     {
-        return view('admin.animals.edit', compact('animal'));
+        $vaccinations = Vaccination::all();
+        return view('admin.animals.edit', compact('animal', 'vaccinations'));
     }
 
     /**
