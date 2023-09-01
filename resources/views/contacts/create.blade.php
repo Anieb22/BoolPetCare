@@ -38,7 +38,7 @@
                     </div>
                     {{-- CAMPO TESTO INFORMAZIONI --}}
                     <div class="mb-3">
-                        <label for="infotext" class="form-label"><strong><em>Richieste e info: </em></strong></label>
+                        <label for="phone_number" class="form-label"><strong><em>Numero di telefono: </em></strong></label>
                         <input type="text" class="form-control" name="phone_number" id="phone_number">
                     </div>
                 
