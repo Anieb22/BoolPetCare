@@ -75,7 +75,7 @@
                     <div class="col-12 d-flex justify-content-between">
                         <a class="btn btn-md btn-primary" href="{{route('admin.animals.index')}}">Torna alla home</a>
                         <div class="form-group">
-                            <a href="{{ route('admin.animals.index') }}" class="btn btn-sm btn-primary">Aggiungi un nuovo paziente</a>
+                            <button class="btn btn-sm btn-success" type="submit">Salva</button>
                         </div>
                     </div>
                 </form>

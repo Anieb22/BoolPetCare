@@ -17,10 +17,11 @@
                     </div>
                 @endif
 
-                
-                <form action="{{ route('admin.animals.update', $animal->id) }}" method="POST">
+                {{-- INIZIO FORM --}}
+                <form action="{{route('admin.animals.update', $animal->id)}}" method="POST">
                     @csrf
                     @method('PUT')
+                    {{-- NOME --}}
                     <div class="form-group">
                         <label for="" class="control-label">Nome</label>
                         <input type="text"class="form-control" id="name" name="name" value="{{ old('name') ?? $animal->name }}">

@@ -88,15 +88,18 @@ class AnimalController extends Controller
      */
     public function update(UpdateAnimalRequest $request, Animal $animal)
     {
-        $form_data = $request->all();      
+        $form_data = $request->all();
+
+        // $animal->name = $form_data['name'];
+        // $animal->specie = $form_data['specie'];
+        // $animal->date_of_birth = $form_data['date_of_birth'];
+        // $animal->genre = $form_data['genre'];
+        // $animal->owner = $form_data['owner'];
+        // $animal->note = $form_data['note'];        
         
         $animal->update($form_data);
 
-        if($request->has('vaccinations')){
-            $animal->vaccinations()->sync($request->vaccinations);
-        }
-
-        return redirect()->route('admin.animals.show', $animal->id);
+        return redirect()->route('admin.animals.index', $animal->id);
     }
 
     /**
