@@ -36,7 +36,7 @@
                     
                     <div class="form-group">
                         <label for="" class="control-label">Data di nascita</label>
-                        <input type="date"class="form-control" id="date_of_birth" name="date_of_birth">
+                        <input type="date"class="form-cvaccination_date" name="date_of_birth">
                     </div>
 
                     
@@ -62,7 +62,7 @@
 
                     <div class="form-group mb-3">
                         <div>Seleziona la vaccinazione</div>
-                            <select class="form-control" name="vaccination[]">
+                            <select class="form-control" name="vaccination">
                                 <option value="">Seleziona una tipologia di vaccino</option>
                                 
                                 @foreach($vaccinations as $vaccination)
@@ -70,6 +70,11 @@
                                 @endforeach
                             </select>
                         </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="control-label">Data di vaccinazione</label>
+                        <input type="date"class="form-control" id="vaccination_date" name="vaccination_date">
                     </div>
 
                     <div class="col-12 d-flex justify-content-between">
