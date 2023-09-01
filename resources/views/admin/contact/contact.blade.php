@@ -19,7 +19,7 @@
                 @endif
 
                 {{-- INIZIO FORM --}}
-                <form action="{{ route('admin.animals.store') }}" method="POST">
+                <form action="{{ route('admin.contact.store') }}" method="POST">
                     @csrf
                     {{-- CAMPO NOME --}}
                     <div class="mb-3">
@@ -46,7 +46,7 @@
                 {{-- SEZIONE PULSANTI --}}
                 <div class="col-12 d-flex justify-content-between">
                     {{-- PULSANTE RITORNO HOME --}}
-                    <a class="btn btn-md btn-primary" href="{{ route('admin.animals.index') }}">Torna alla Home</a>
+                    <a class="btn btn-md btn-primary" href="{{ {{ url('/') }} }}">Torna alla Home</a>
                     {{-- PULSANTE INVIO FORM --}}
                     <div class="form-group">
                         <button type="submit" class="btn btn-success ml-5">Invia Richiesta</button>
