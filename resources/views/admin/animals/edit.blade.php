@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 
-{{-- FORM PER INSERIRE NUOVI PAZIENTI ANIMALI :3 --}}
 @section('content')
     <div class="container">
 
@@ -18,28 +17,26 @@
                     </div>
                 @endif
 
-                {{-- INIZIO FORM --}}
-                <form action="{{route('admin.animals.update', $animal->id)}}" method="POST">
+                
+                <form action="{{ route('admin.animals.update', $animal->id) }}" method="POST">
                     @csrf
-                    {{-- NOME --}}
+                    @method('PUT')
                     <div class="form-group">
                         <label for="" class="control-label">Nome</label>
                         <input type="text"class="form-control" id="name" name="name" value="{{ old('name') ?? $animal->name }}">
                     </div>
 
-                    {{-- SPECIE --}}
                     <div class="form-group">
                         <label for="" class="control-label">Specie</label>
                         <input type="text"class="form-control" id="specie" name="specie" value="{{ old('specie') ?? $animal->specie }}">
                     </div>
 
-                    {{-- DATA DI NASCITA --}}
+                    
                     <div class="form-group">
                         <label for="" class="control-label">Data di nascita</label>
                         <input type="date"class="form-control" id="date_of_birth" name="date_of_birth" value="{{ old('date_of_birth') ?? $animal->date_of_birth }}">
                     </div>
 
-                    {{-- GENERE - M/F --}}
                     <div class="form-group">
                         <label for="" class="control-label">Genere</label>
                         <select class="form-select form-select-sm" aria-label="Small select example" id="genre" name="genre">
@@ -48,13 +45,13 @@
                         </select>
                     </div>
 
-                    {{-- PROPRIETARIO --}}
+                
                     <div class="form-group">
                         <label for="" class="control-label">Nome del proprietario</label>
                         <input type="text"class="form-control" id="owner" name="owner" value="{{ old('owner') ?? $animal->owner }}">
                     </div>
 
-                    {{-- NOTE --}}
+                   
                     <div class="form-group mb-3">
                         <label for="" class="control-label">Note aggiuntive</label>
                         <textarea type="text"class="form-control" id="note" name="note">{{ old('note') ?? $animal->note }}</textarea>

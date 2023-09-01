@@ -29,7 +29,7 @@ class AnimalController extends Controller
     public function create()
     {
         $vaccinations = Vaccination::all();
-        return view('admin.animals.edit', compact('vaccinations'));
+        return view('admin.animals.create', compact('vaccinations'));
     }
 
     /**
@@ -96,7 +96,7 @@ class AnimalController extends Controller
             $animal->vaccinations()->sync($request->vaccinations);
         }
 
-        return redirect()->route('admin.animals.index');
+        return redirect()->route('admin.animals.show', $animal->id);
     }
 
     /**
