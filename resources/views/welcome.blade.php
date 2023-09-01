@@ -30,7 +30,7 @@
                 Benvenuti su BoolPetCare!
             </h1>
             {{-- SLOGAN --}}
-            <h4 class="col-md-8 fs-4 text-white">"La Tua Felicità cammina su Quattro Zampe, affidaci le sue cure!"</h4> <br>
+            <h4 class="col-md-8 fs-4 text-white">"La tua felicità cammina su quattro zampe, affidaci le sue cure!"</h4> <br>
             {{-- LINK ALLA PAGINA CONTATTI --}}
             <a href="{{ route('contacts.create') }}" class="btn btn-primary btn-lg" type="button">Contattaci</a>
             <br>
@@ -52,6 +52,7 @@
     </div>
     {{-- FINE JUMBOTRON --}}
     <hr class="m-5">
+    {{-- INIZIO FOOTER --}}
     <footer class="bg-dark text-center text-lg-start text-white">
         <!-- Grid container -->
         <div class="container p-4">
@@ -168,4 +169,5 @@
         </div>
         <!-- Copyright -->
     </footer>
+    {{-- FINE FOOTER --}}
 @endsection
