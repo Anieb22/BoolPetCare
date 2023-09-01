@@ -22,25 +22,18 @@
 <body>
     <div id="app">
 
-
+    
     <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center col-1" href="{{ url('/') }}">
+                <a class="navbar-brand d-flex align-items-center col-ml-1 col-sm-2" href="{{ url('/') }}">
                     <div class="logo_laravel w-100">
                             <img src="{{ Vite::asset('resources\img\BoolPetCare@4x.png')}}" class="w-100" alt="">
                     </div>
                     {{-- config('app.name', 'Laravel') --}}
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto ">
+                    <ul class="navbar-nav ml-auto col-sm-3 d-flex flex-row justify-content-between">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
