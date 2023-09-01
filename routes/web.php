@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController as DashboardController;
 use App\Http\Controllers\Admin\AnimalController as AnimalController;
+use App\Http\Controllers\ContactController as ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +21,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('contacts/create', [ContactController::class, 'create'])->name('contacts.create');
+Route::post('contacts', [ContactController::class, 'store'])->name('contacts.store');
+
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('animals', AnimalController::class);
-    Route::resource('contact', ContactController::class);
 });
 
 Route::middleware('auth')->group(function () {

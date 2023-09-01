@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\UpdateContactRequest;
+use App\Http\Controllers\Controller;
 
 class ContactController extends Controller
 {
@@ -25,7 +26,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('contacts.create');
     }
 
     /**
@@ -36,7 +37,17 @@ class ContactController extends Controller
      */
     public function store(StoreContactRequest $request)
     {
-        //
+        $form_data = $request->all();
+
+        $contact = new Contact($form_data);
+        $contact->name = $form_data['name'];
+        $contact->surname = $form_data['surname'];
+        $contact->email = $form_data['email'];
+        $contact->phone_number = $form_data['phone_number'];
+        
+        $contact->save();
+
+        return redirect()->route('contacts.create');
     }
 
     /**

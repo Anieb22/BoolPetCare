@@ -11,7 +11,7 @@
         </h1>
 
         <p class="col-md-8 fs-4">This a preset package with Bootstrap 5 views for laravel projects including laravel breeze/blade. It works from laravel 9.x to the latest release 10.x</p>
-        <a href="#" class="btn btn-primary btn-lg" type="button">Documentation</a>
+        <a href="{{ route('contacts.create')}}" class="btn btn-primary btn-lg" type="button">Documentation</a>
     </div>
 </div>
 
