@@ -87,16 +87,16 @@ class AnimalController extends Controller
     {
         $form_data = $request->all();
 
-        $animal->name = $form_data['name'];
-        $animal->specie = $form_data['specie'];
-        $animal->date_of_birth = $form_data['date_of_birth'];
-        $animal->genre = $form_data['genre'];
-        $animal->owner = $form_data['owner'];
-        $animal->note = $form_data['note'];        
+        // $animal->name = $form_data['name'];
+        // $animal->specie = $form_data['specie'];
+        // $animal->date_of_birth = $form_data['date_of_birth'];
+        // $animal->genre = $form_data['genre'];
+        // $animal->owner = $form_data['owner'];
+        // $animal->note = $form_data['note'];        
         
         $animal->update($form_data);
 
-        return redirect()->route('admin.animals.index');
+        return redirect()->route('admin.animals.index', $animal->id);
     }
 
     /**

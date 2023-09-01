@@ -16,6 +16,6 @@ class Vaccination extends Model
     ];
     
     public function animals(){
-        return $this->belongsToMany(Animal::class)->withPivot('vaccination_date');;
+        return $this->belongsToMany(Animal::class)->withPivot('vaccination_date');
     }
 }
