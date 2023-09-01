@@ -70,6 +70,11 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label for="" class="control-label">Data di vaccinazione</label>
+                        <input type="date"class="form-control" id="vaccination_date" name="vaccination_date">
+                    </div>
+
                     <div class="col-12 d-flex justify-content-between">
                         <a class="btn btn-md btn-primary" href="{{route('admin.animals.index')}}">Torna alla home</a>
                         <div class="form-group">
