@@ -80,26 +80,28 @@
     <main>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-3">
+                <div class="col-3 bg-dark">
                     <!-- Sidebar -->
-                    <div class="bg-dark w-100" id="nav-bar">
+                    <div class="bg-dark" id="nav-bar">
                         <nav id="sidebarMenu" class="d-flex flex-column">
-                            <div class="position-sticky flex-column">
+                            {{-- LINK ALLE PAGINE --}}
+                            <div class="position-sticky flex-column m-auto">
+                                <h5 class="text-white m-3"><strong><i>Link alle nostre pagine:</i></strong></h5>
                                 <div class="list-group list-group-flush">
                                     <a href="{{ route('admin.animals.index') }}"
                                         class="list-group-item bg-transparent link-light mb-auto">
-                                        <i class="fas fa-paw me-3"></i><span>Animals</span>
+                                        <i class="fas fa-paw me-3"></i><span>I vostri Pet</span>
                                     </a>
                                     <a href="{{ route('profile.edit') }}"
                                         class="list-group-item bg-transparent link-light mb-auto">
-                                        <i class="fas fa-lock fa-fw me-3"></i><span>User</span></a>
+                                        <i class="fas fa-lock fa-fw me-3"></i><span>Utenti</span></a>
                                 </div>
                             </div>
                         </nav>
                     </div>
 
                 </div>
-                <div class="col-9 overflow-y-visible">
+                <div class="col-9 bg-dark overflow-y-visible">
                     @yield('content')
                 </div>
             </div>
