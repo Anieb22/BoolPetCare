@@ -4,7 +4,11 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController as DashboardController;
 use App\Http\Controllers\Admin\AnimalController as AnimalController;
+<<<<<<< HEAD
 use App\Http\Controllers\Admin\VaccinationController as VaccinationController;
+=======
+use App\Http\Controllers\ContactController as ContactController;
+>>>>>>> 09e57a56a21d5e701f612d29d5401031bf2d85ff
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +25,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('contacts/create', [ContactController::class, 'create'])->name('contacts.create');
+Route::post('contacts', [ContactController::class, 'store'])->name('contacts.store');
+
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('animals', AnimalController::class);
-    Route::resource('vaccinations', VaccinationController::class);
-
 });
 
 Route::middleware('auth')->group(function () {
@@ -33,5 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
 
 require __DIR__.'/auth.php';
