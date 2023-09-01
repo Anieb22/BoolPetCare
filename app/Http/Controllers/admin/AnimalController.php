@@ -18,6 +18,9 @@ class AnimalController extends Controller
     {
         $animals = Animal::all();
         return view('admin.animals.index', compact('animals'));
+
+    
+
     }
 
     /**
