@@ -6,5 +6,9 @@
 }
 
 .pet {
-    background-image: url("resources\img\krista-mangulsone-9gz3wfHr65U-unsplash.jpg");
+    background-image: url("img/krista-mangulsone-9gz3wfHr65U-unsplash.jpg");
+}
+
+.shadow-slide {
+    filter: brightness(30%);
 }

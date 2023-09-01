@@ -85,7 +85,7 @@
             </div>
         </nav>
 
-        <main class="overflow-y-visible">
+        <main class="overflow-hidden">
             @yield('content')
         </main>
     </div>
