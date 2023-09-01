@@ -107,7 +107,10 @@ class AnimalController extends Controller
      */
     public function destroy(Animal $animal)
     {
+        // $animal->vaccinations()->detach();
+
         $animal->delete();
-        return redirect()->route('admin.animals.index');
+        
+        return redirect()->route('admin.animals.index')->with('message', 'Animale cancellato');
     }
 }
