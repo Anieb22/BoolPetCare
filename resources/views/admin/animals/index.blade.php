@@ -49,10 +49,12 @@
                                         <button type="submit" class="btn btn-danger"><i
                                                 class="fas fa-trash-can"></i></button>
                                     </form>
-                                    <button type="button" class="btn btn-warning"><a
-                                            href="{{ route('admin.animals.edit', ['animal' => $animal]) }}"
-                                            class="link-underline link-underline-opacity-0 link-dark"><i
-                                                class="fas fa-pen"></i></a></button>
+                                    <button type="button" class="btn btn-warning">
+                                        <a href="{{ route('admin.animals.edit', ['animal' => $animal]) }}"
+                                            class="link-underline link-underline-opacity-0 link-dark">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                    </button>
                                 </td>
                             </tr>
                         @endforeach
