@@ -66,6 +66,10 @@
                         @endforeach
                     </tbody>
                 </table>
+                @foreach ($animal->vaccinations as $vaccinations){
+                    <div>{{$vaccinations->type}}</div>
+                }
+                @endforeach
             </div>
         </div>
     </div>
