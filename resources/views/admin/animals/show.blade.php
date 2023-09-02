@@ -61,7 +61,17 @@
                             {{-- SEZIONE VACCINAZIONI EFFETTUATE --}}
                             <tr>
                                 <th scope="row" colspan="2">Vaccinazioni effettuate: </th>
-                                <td>{{ isset($vaccinations) ? $vaccinations->type : 'Nessuna vaccinazione effettuata' }}
+                                <td>
+                                    @if ($animal->vaccinations->isEmpty())
+                                        Nessuna vaccinazione
+                                    @else
+                                        @foreach ($animal->vaccinations as $vaccination)
+                                            {{ $vaccination->type }}
+                                            {{-- @if (!$loop->last)
+                                                <br>
+                                            @endif -NON CANCELLARE- --}}
+                                        @endforeach
+                                    @endif
                                 </td>
                             </tr>
                         </tbody>
