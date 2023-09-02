@@ -8,6 +8,7 @@
                         Aggiungi Paziente
                     </a>
                 </button>
+                
                 <table class="table">
                     <thead>
                         <tr>
@@ -58,6 +59,10 @@
                         @endforeach
                     </tbody>
                 </table>
+                @foreach ($animal->vaccinations as $vaccinations){
+                    <div>{{$vaccinations->type}}</div>
+                }
+                @endforeach
             </div>
         </div>
     </div>
