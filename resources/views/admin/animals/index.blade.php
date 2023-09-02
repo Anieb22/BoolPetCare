@@ -39,7 +39,18 @@
                                         femmina
                                     @endif
                                 </td>
-                                <td>{{ isset($vaccination) ? $vaccination->type : 'No vaccinazioni' }}</td>
+                                <td>
+                                    @if ($animal->vaccinations->isEmpty())
+                                        Nessuna vaccinazione
+                                    @else
+                                        @foreach ($animal->vaccinations as $vaccination)
+                                            {{ $vaccination->type }}
+                                            {{-- @if (!$loop->last)
+                                                <br>
+                                            @endif -NON CANCELLARE- --}}
+                                        @endforeach
+                                    @endif
+                                </td>
                                 <td>{{ $animal->owner }}</td>
                                 <td>
                                     <button type="button" class="btn btn-primary">
@@ -66,10 +77,6 @@
                         @endforeach
                     </tbody>
                 </table>
-                @foreach ($animal->vaccinations as $vaccinations){
-                    <div>{{$vaccinations->type}}</div>
-                }
-                @endforeach
             </div>
         </div>
     </div>
