@@ -10,21 +10,25 @@
                 <div
                     class="col-12 text-white bg-success d-flex flex-row mt-4 align-items-center border rounded border-0 p-2 justify-content-between">
                     <section class="d-flex flex-row">
-                        <h3 class="text-white bold-text m-4"> Nome:
+                        <h2 class="text-white bold-text m-4"> Nome:
                             <h1 class="text-white bold-text m-4"><strong>{{ $animal->name }}</strong></h1>
-                        </h3>
+                        </h2>
                     </section>
                 </div>
+                <hr style="color: #00ff09">
                 {{-- SECTION SPECIE PET --}}
                 <div class="col-12 d-flex flex-row justify-content-between">
-                    <div class="col-12 my-4 bg-dark">
-                        <h3 class="text-info">Specie: {{ $animal->specie }}</h3>
+                    <div class="col-12 my-2 bg-dark">
+                        <h4 class="text-info">Specie: </h4>
+                        <h3 class="text-warning"><strong>{{ $animal->specie }}</strong></h3>
                         {{-- DESCRIZIONE DEL PET --}}
+                        <h4 class="text-info pt-4">Descrizione: </h4>
                         <p class="text-white bg-dark pt-3" id="description">
-                            <strong><em>{{ $animal->note }}</em></strong>
+                            <em>{{ $animal->note }}</em>
                         </p>
                     </div>
                 </div>
+                <hr style="color: #00ff09">
             </div>
         </div>
     </div>
@@ -52,7 +56,12 @@
                             {{-- SPECIFICA DEL GENERE --}}
                             <tr>
                                 <th scope="row" colspan="2">Genere: </th>
-                                <td>{{ $animal->genre }}</td>
+                                <td>{{ $animal->genre === 0 ? 'Femmina' : 'Maschio' }}</td>
+                            </tr>
+                            {{-- SEZIONE VACCINAZIONI EFFETTUATE --}}
+                            <tr>
+                                <th scope="row" colspan="2">Vaccinazioni effettuate: </th>
+                                <td>{{ isset($vaccination) ? $vaccination->type : 'Nessuna vaccinazione effettuata' }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -82,8 +91,22 @@
                 </div>
             </div>
         </div>
+        {{-- SZIONE PULSANTI --}}
+        <div class="my-2">
+            {{-- PULSANTE TORNA INDIETRO --}}
+            <button type="button" class="btn btn-md btn-danger mx-5">
+                <a href="{{ route('admin.animals.index') }}"
+                    class="link-underline link-underline-opacity-0 link-light text-white">Torna indietro</a>
+            </button>
+            {{-- PULSANTE TORNA ALLA HOMEPAGE --}}
+            <button type="button" class="btn btn-md btn-warning mx-5">
+                <a href="{{ route('homepage') }}"
+                    class="link-underline link-underline-opacity-0 link-light text-black">Torna alla Home Page</a>
+            </button>
+        </div>
+        {{-- FINE SEZIONE PULSANTI --}}
         {{-- SEZIONI ANIMALI VISITATI --}}
-        <div class="container">
+        <div class="container mb-5">
             <div class="counter__content mt-4">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-6">

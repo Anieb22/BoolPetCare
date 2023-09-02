@@ -3,12 +3,16 @@
     <div class="container">
         <div class="row">
             <div class="col-9 my-5">
-                <button type="button" class="btn btn-primary">
+                <button type="button" class="btn btn-md btn-success">
                     <a href="{{ route('admin.animals.create') }}" class="link-underline link-underline-opacity-0 link-light">
-                        Aggiungi Paziente
+                        Aggiungi Pet
                     </a>
                 </button>
-                <table class="table">
+                <button type="button" class="btn btn-md btn-warning mx-5">
+                    <a href="{{ route('homepage') }}"
+                        class="link-underline link-underline-opacity-0 link-light text-black">Torna alla Home Page</a>
+                </button>
+                <table class="table rounded rounded-5 mt-4">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -16,6 +20,7 @@
                             <th scope="col">Specie</th>
                             <th scope="col">Data di Nascita</th>
                             <th scope="col">Genere</th>
+                            <th scope="col">Vaccinazioni</th>
                             <th scope="col">Proprietario</th>
                             <th scope="col">Azioni</th>
                         </tr>
@@ -34,6 +39,7 @@
                                         femmina
                                     @endif
                                 </td>
+                                <td>{{ isset($vaccination) ? $vaccination->type : 'No vaccinazioni' }}</td>
                                 <td>{{ $animal->owner }}</td>
                                 <td>
                                     <button type="button" class="btn btn-primary">

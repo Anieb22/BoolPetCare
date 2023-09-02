@@ -17,8 +17,6 @@
                         </ul>
                     </div>
                 @endif
-
-
                 <form action="{{ route('admin.animals.store') }}" method="POST">
                     @csrf
 
@@ -65,7 +63,7 @@
                         <div>Seleziona la vaccinazione</div>
                         <select class="form-control" name="vaccination[]">
                             <option value="">Seleziona una tipologia di vaccino</option>
-
+                            {{-- CICLO FOR EACH CHE VISUALIZZA LA LISTA DELLE VACCINAZIONI --}}
                             @foreach ($vaccinations as $vaccination)
                                 <option {{ $vaccination->id }} value="{{ $vaccination->id }}">{{ $vaccination->type }}
                                 </option>
