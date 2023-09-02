@@ -61,7 +61,8 @@
                             {{-- SEZIONE VACCINAZIONI EFFETTUATE --}}
                             <tr>
                                 <th scope="row" colspan="2">Vaccinazioni effettuate: </th>
-                                <td>{{ isset($vaccination) ? $vaccination->type : 'Nessuna vaccinazione effettuata' }}</td>
+                                <td>{{ isset($vaccinations) ? $vaccinations->type : 'Nessuna vaccinazione effettuata' }}
+                                </td>
                             </tr>
                         </tbody>
                     </table>
