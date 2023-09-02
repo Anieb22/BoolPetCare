@@ -19,7 +19,7 @@ use App\Http\Controllers\ContactController as ContactController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('homepage');
 
 Route::get('contacts/create', [ContactController::class, 'create'])->name('contacts.create');
 Route::post('contacts', [ContactController::class, 'store'])->name('contacts.store');
@@ -28,7 +28,6 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('animals', AnimalController::class);
     Route::resource('vaccinations', VaccinationController::class);
-
 });
 
 Route::middleware('auth')->group(function () {
@@ -39,4 +38,4 @@ Route::middleware('auth')->group(function () {
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

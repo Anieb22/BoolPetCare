@@ -26,7 +26,8 @@ class VaccinationController extends Controller
      */
     public function create()
     {
-        //
+        $vaccination = new Vaccination();
+        return view('admin.animals.index', compact('vaccination'));
     }
 
     /**
@@ -48,7 +49,7 @@ class VaccinationController extends Controller
      */
     public function show(Vaccination $vaccination)
     {
-        //
+        return view('admin.animals.show', compact('vaccination'));
     }
 
     /**
