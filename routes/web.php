@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('homepage');
 
+Route::get('website/homeweb', function () {
+    return view('website.homeweb');
+});
+
 Route::get('contacts/create', [ContactController::class, 'create'])->name('contacts.create');
 Route::post('contacts', [ContactController::class, 'store'])->name('contacts.store');
 
@@ -35,6 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 
 
 
