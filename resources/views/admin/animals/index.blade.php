@@ -53,18 +53,14 @@
                                 </td>
                                 <td>{{ $animal->owner }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-success">
                                         <a href="{{ route('admin.animals.show', ['animal' => $animal]) }}"
-                                            class="link-underline link-underline-opacity-0 link-light">
+                                            class="link-underline link-underline-opacity-0 link-light btn btn-success">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                    </button>
-                                    <button type="button" class="btn btn-warning">
                                         <a href="{{ route('admin.animals.edit', ['animal' => $animal]) }}"
-                                            class="link-underline link-underline-opacity-0 link-dark">
+                                            class="link-underline link-underline-opacity-0 link-dark btn btn-warning">
                                             <i class="fas fa-pen"></i>
                                         </a>
-                                    </button>
                                     <form action="{{ route('admin.animals.destroy', ['animal' => $animal]) }}"
                                         method="post" class="d-inline">
                                         @csrf
