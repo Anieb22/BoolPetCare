@@ -13,7 +13,7 @@ class StoreVaccinationRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class StoreVaccinationRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'vaccination_id' => 'nullable|min:2|max:30',
+            'vaccination_date' => 'nullable|date_format:Y-m-d|min:3|max:255'
         ];
     }
 }
