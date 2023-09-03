@@ -58,11 +58,11 @@
             </button>
             <div class="collapse navbar-collapse d-xl-flex justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <li class="nav-item d-flex justify-content-end">
                         <a class="nav-link link-light" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
-                        <li class="nav-item">
+                        <li class="nav-item d-flex justify-content-end">
                             <a class="nav-link link-light" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                     @endif
