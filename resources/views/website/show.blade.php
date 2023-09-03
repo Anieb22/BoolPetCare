@@ -67,7 +67,13 @@
                     Unisciti a noi oggi stesso e sperimenta la tranquillità di avere tutto sotto controllo!
                 </h1>
             </div>
+        </div>
 
+        {{-- PULSANTE CONTATTI --}}
+        <div class="d-flex justify-content-center">
+            <a href="{{ route('contacts.create') }}" class="btn btn-success btn-lg mt-4" type="button">
+                Contattaci
+            </a>
         </div>
     </div>
 
