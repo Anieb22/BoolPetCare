@@ -16,7 +16,11 @@
                         </ul>
                     </div>
                 @endif
-
+                @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+                @endif
                 {{-- INIZIO FORM --}}
                 <form class="mt-2" action="{{ route('contacts.store') }}" method="POST">
                     @csrf
@@ -55,7 +59,7 @@
                         <a class="btn btn-md btn-primary" href="{{ url('/') }}">Torna alla Home</a>
                         {{-- PULSANTE INVIO FORM --}}
                         <div class="form-group">
-                            <button type="submit" class="btn btn-success ml-5">Invia Richiesta</button>
+                        <button type="submit" class="btn btn-success" id="liveToastBtn">Invia richiesta</button>
                         </div>
                     </div>
                 </form>

@@ -46,6 +46,7 @@ class ContactController extends Controller
         $contact->phone_number = $form_data['phone_number'];
         
         $contact->save();
+        session()->flash('success', 'La tua richiesta è stata inviata con successo! Ti contatteremo il prima possibile.');
 
         return redirect()->route('contacts.create');
     }
