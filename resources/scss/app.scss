@@ -1,8 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
 @import '/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
+body {
+    background-color: $gray-900;
+}
+
 #nav-bar {
-    height: 100vh;
+    height: 100%;
 }
 
 .pet {
@@ -16,3 +20,43 @@
 img#logo {
     width: 100%;
 }
+
+.bg-general {
+    color: #5a5c69;
+}
+
+/* sezione show contatori */
+
+.counter__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.counter__item__text h2 {
+    font-size: 60px;
+    color: #1a083d;
+    font-weight: 700;
+    margin-bottom: 6px;
+    margin-top: 18px;
+}
+
+.counter__item__text p {
+    color: #1a083d;
+    margin-bottom: 0;
+}
+
+.counter__item__text .icon {
+    color: #1a083d;
+}
+
+/* fine sezione show contatori */

@@ -1,98 +1,163 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="bg-primary" style="height: 100px"></div>
-<div class="container">
-    <div class="row">
-        <div class="col-12" id="animals">
-            <div class="col-12 position-absolute w-75" id="animal">
-                <img src="{{ $animal['thumb'] }}" alt="" class="my-3">
-            </div>
-            <div class="col-8 bg-success d-flex flex-row mt-4 align-items-center border rounded border-0 p-2 justify-content-between">
-                <section class="price d-flex flex-row">U.S.:
-                <section class="text-white bold-text ms-1">{{$animal->name}}</section>
-                </section>
-                <div class="d-flex justify-content-end">
-                <section class="me-1 price d-flex">AVAILABLE</section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 bg-dark" id="animals">
+                <div class="col-12 position-absolute w-75" id="animal">
+                    <img src="{{ $animal['thumb'] }}" alt="" class="my-3">
                 </div>
-            </div>
-            <div class="col-12 d-flex flex-row justify-content-between">
-                <div class="col-8 my-4">
-                    <h1>{{$animal->specie}}</h1>
-                    <p class=".text-body-secondary" id="description">
-                     {{$animal->note}}
-                    </p>
+                <div
+                    class="col-12 text-white bg-success d-flex flex-row mt-4 align-items-center border rounded border-0 p-2 justify-content-between">
+                    <section class="d-flex flex-row">
+                        <h2 class="text-white bold-text m-4"> Nome:
+                            <h1 class="text-white bold-text m-4"><strong>{{ $animal->name }}</strong></h1>
+                        </h2>
+                    </section>
                 </div>
-                <div class="col-2 d-flex flex-column align-items-end mb-5">
-                    <h6 class="text-uppercase">advertisement</h6>
-                    <img src="{{ Vite::asset('resources/img/advertisement.png')}}" alt="">
+                <hr style="color: #00ff09">
+                {{-- SECTION SPECIE PET --}}
+                <div class="col-12 d-flex flex-row justify-content-between">
+                    <div class="col-12 my-2 bg-dark">
+                        <h4 class="text-info">Specie: </h4>
+                        <h3 class="text-warning"><strong>{{ $animal->specie }}</strong></h3>
+                        {{-- DESCRIZIONE DEL PET --}}
+                        <h4 class="text-info pt-4">Descrizione: </h4>
+                        <p class="text-white bg-dark pt-3" id="description">
+                            <em>{{ $animal->note }}</em>
+                        </p>
+                    </div>
                 </div>
+                <hr style="color: #00ff09">
             </div>
         </div>
     </div>
-</div>
-<div class="bg-light" style="height: 300px">
-    <div class="container">
-        <div class="row d-flex justify-content-between">
-            <div class="col-6">
-                <table class="table table-light" id="talent">
+    <div class="bg-dark">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <div class="col-12 bg-dark">
+                    <table class="table table-dark" id="talent">
+                        {{-- SEZIONE DETTAGLI --}}
                         <thead>
                             <tr>
-                            <th scope="col" colspan="4">
-                                <h3>
-                                    Talent
-                                </h3>
-                            </th>
+                                <th scope="col" colspan="4">
+                                    <h3 class="text-info">Dati anagrafici: </h3>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
+                            {{-- SPECIFICA DELLA DATA DI NASCITA --}}
                             <tr>
-                            <th scope="row" colspan="2">Art by</th>
-                            
-                            <td class="text-primary">
-                                {{ $animal->artists }}
-                            </td>
+                                <th scope="row" colspan="2">Data di nascita:</th>
+                                <td class="text-white text-uppercase">
+                                    {{ $animal->date_of_birth }}
+                                </td>
                             </tr>
+                            {{-- SPECIFICA DEL GENERE --}}
                             <tr>
-                            <th scope="row" colspan="2">Writers</th>
-                            <td class="text-primary">{{ $animal->writers }}</td>
+                                <th scope="row" colspan="2">Genere: </th>
+                                <td>{{ $animal->genre === 0 ? 'Femmina' : 'Maschio' }}</td>
                             </tr>
+                            {{-- SEZIONE VACCINAZIONI EFFETTUATE --}}
                             <tr>
+                                <th scope="row" colspan="2">Vaccinazioni effettuate: </th>
+                                <td>
+                                    @if ($animal->vaccinations->isEmpty())
+                                        Nessuna vaccinazione
+                                    @else
+                                        @foreach ($animal->vaccinations as $vaccination)
+                                            {{ $vaccination->type }}
+                                            {{-- @if (!$loop->last)
+                                                <br>
+                                            @endif -NON CANCELLARE- --}}
+                                        @endforeach
+                                    @endif
+                                </td>
+                            </tr>
                         </tbody>
-                </table>
-            </div>
-            <div class="col-4">
-                <table class="table table-light" id="talent">
+                    </table>
+                </div>
+                {{-- SEZIONE PROPRIETARIO --}}
+                <div class="col-12">
+                    <table class="table table-dark" id="talent">
                         <thead>
+                            {{-- SEZIONE DETTAGLI PROPRIETARIO --}}
                             <tr>
-                            <th scope="col" colspan="4">
-                                <h3>
-                                    Spec
-                                </h3>
-                            </th>
+                                <th scope="col" colspan="4">
+                                    <h3 class="text-info"> Info Proprietario: </h3>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
+                            {{-- NOME PROPRIETARIO --}}
                             <tr>
-                            <th scope="row" colspan="2">Series:</th>
-                            
-                                <td class="text-primary text-uppercase">
-                                {{ $animal->series }}
+                                <th scope="row" colspan="2">Nome: </th>
+                                <td class="text-white">
+                                    {{ $animal->owner }}
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row" colspan="2">U.S. Price</th>
-                                <td>{{$animal->price}}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" colspan="2">On Sale Date</th>
-                                <td>{{$animal->sale_date}}</td>
-                            </tr>
                         </tbody>
-                </table>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {{-- SZIONE PULSANTI --}}
+        <div class="my-2">
+            {{-- PULSANTE TORNA INDIETRO --}}
+            <button type="button" class="btn btn-md btn-danger mx-5">
+                <a href="{{ route('admin.animals.index') }}"
+                    class="link-underline link-underline-opacity-0 link-light text-white">Torna indietro</a>
+            </button>
+            {{-- PULSANTE TORNA ALLA HOMEPAGE --}}
+            <button type="button" class="btn btn-md btn-warning mx-5">
+                <a href="{{ url('/') }}"
+                    class="link-underline link-underline-opacity-0 link-light text-black">Torna alla Home Page</a>
+            </button>
+        </div>
+        {{-- FINE SEZIONE PULSANTI --}}
+        {{-- SEZIONI ANIMALI VISITATI --}}
+        <div class="container mb-5">
+            <div class="counter__content mt-4">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="counter__item">
+                            <div class="counter__item__text">
+                                <i class="icon fas fa-project-diagram fa-3x text-success"></i>
+                                <h2 class="counter_num text-warning">54</h2>
+                                <h5 class="text-white">Pet visitati oggi</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="counter__item second__item">
+                            <div class="counter__item__text">
+                                <i class="icon far fa-smile-beam fa-3x text-success"></i>
+                                <h2 class="counter_num text-warning">452</h2>
+                                <h5 class="text-white">Proprietari felici</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="counter__item third__item">
+                            <div class="counter__item__text">
+                                <i class="icon fas fa-chalkboard-teacher fa-3x text-success"></i>
+                                <h2 class="counter_num text-warning">35</h2>
+                                <h5 class="text-white">Nuovi pet ogni giorno</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="counter__item four__item">
+                            <div class="counter__item__text">
+                                <i class="icon fas fa-list-alt fa-3x text-success"></i>
+                                <h2 class="counter_num text-warning">8946</h2>
+                                <h5 class="text-white">Pet visitati ogni anno</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
 @endsection

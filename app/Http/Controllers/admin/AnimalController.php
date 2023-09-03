@@ -48,8 +48,9 @@ class AnimalController extends Controller
         
         $animal->save();
 
-        if($request->has('vaccinations')){
-            $animal->vaccinations()->attach($request->vaccinations);
+        if($request->has('vaccination')){
+
+            $animal->vaccinations()->attach($request->vaccination, ['vaccination_date'=>$form_data['vaccination_date']]);
         }
 
         return redirect()->route('admin.animals.index');
@@ -99,6 +100,10 @@ class AnimalController extends Controller
         
         $animal->update($form_data);
 
+        if($request->has('vaccination')){
+            $animal->vaccinations()->attach($request->vaccination);
+        }
+
         return redirect()->route('admin.animals.index', $animal->id);
     }
 
@@ -110,6 +115,8 @@ class AnimalController extends Controller
      */
     public function destroy(Animal $animal)
     {
+        $animal->vaccinations()->sync([]);
+
         $animal->delete();
         return redirect()->route('admin.animals.index');
     }

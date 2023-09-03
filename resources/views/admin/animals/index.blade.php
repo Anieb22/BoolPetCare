@@ -3,12 +3,16 @@
     <div class="container">
         <div class="row">
             <div class="col-9 my-5">
-                <button type="button" class="btn btn-primary">
+                <button type="button" class="btn btn-md btn-success">
                     <a href="{{ route('admin.animals.create') }}" class="link-underline link-underline-opacity-0 link-light">
-                        Aggiungi Paziente
+                        Aggiungi Pet
                     </a>
                 </button>
-                <table class="table">
+                <button type="button" class="btn btn-md btn-warning mx-5">
+                    <a href="{{ url('/') }}"
+                        class="link-underline link-underline-opacity-0 link-light text-black">Torna alla Home Page</a>
+                </button>
+                <table class="table rounded rounded-5 mt-4">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -16,6 +20,7 @@
                             <th scope="col">Specie</th>
                             <th scope="col">Data di Nascita</th>
                             <th scope="col">Genere</th>
+                            <th scope="col">Vaccinazioni</th>
                             <th scope="col">Proprietario</th>
                             <th scope="col">Azioni</th>
                         </tr>
@@ -34,6 +39,18 @@
                                         femmina
                                     @endif
                                 </td>
+                                <td>
+                                    @if ($animal->vaccinations->isEmpty())
+                                        Nessuna vaccinazione
+                                    @else
+                                        @foreach ($animal->vaccinations as $vaccination)
+                                            {{ $vaccination->type }}
+                                            {{-- @if (!$loop->last)
+                                                <br>
+                                            @endif -NON CANCELLARE- --}}
+                                        @endforeach
+                                    @endif
+                                </td>
                                 <td>{{ $animal->owner }}</td>
                                 <td>
                                     <button type="button" class="btn btn-primary">
@@ -49,10 +66,12 @@
                                         <button type="submit" class="btn btn-danger"><i
                                                 class="fas fa-trash-can"></i></button>
                                     </form>
-                                    <button type="button" class="btn btn-warning"><a
-                                            href="{{ route('admin.animals.edit', ['animal' => $animal]) }}"
-                                            class="link-underline link-underline-opacity-0 link-dark"><i
-                                                class="fas fa-pen"></i></a></button>
+                                    <button type="button" class="btn btn-warning">
+                                        <a href="{{ route('admin.animals.edit', ['animal' => $animal]) }}"
+                                            class="link-underline link-underline-opacity-0 link-dark">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                    </button>
                                 </td>
                             </tr>
                         @endforeach
