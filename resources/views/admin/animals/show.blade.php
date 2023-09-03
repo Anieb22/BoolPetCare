@@ -111,7 +111,7 @@
             </button>
             {{-- PULSANTE TORNA ALLA HOMEPAGE --}}
             <button type="button" class="btn btn-md btn-warning mx-5">
-                <a href="{{ route('homepage') }}"
+                <a href="{{ url('/') }}"
                     class="link-underline link-underline-opacity-0 link-light text-black">Torna alla Home Page</a>
             </button>
         </div>
