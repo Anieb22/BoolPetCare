@@ -18,7 +18,7 @@
     @vite(['resources/js/app.js'])
 </head>
 </head>
-<body>
+<body class="bg-dark">
 <nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid container">
         <div class="col-lg-2 col-3 col-xl-1">
