@@ -9,6 +9,7 @@
 
         <div class="row">
             <div class="col-9">
+                {{-- GESTIONE DEGLI ERRORI --}}
                 @if ($errors->any())
                     <div class="alert alert-warning" role="alert">
                         <ul>
@@ -18,6 +19,7 @@
                         </ul>
                     </div>
                 @endif
+                {{-- FORM DI INSERIMENTO DATI --}}
                 <form action="{{ route('admin.animals.store') }}" method="POST">
                     @csrf
                     {{-- INSERIMENTO NOME PET --}}
@@ -83,7 +85,11 @@
 
             {{-- PULSANTI --}}
             <div class="col-9 d-flex justify-content-between mt-5 mb-5">
-                <a class="btn btn-md btn-primary" href="{{ route('admin.animals.index') }}">Torna alla home</a>
+                {{-- PULSANTE DI RITORNO ALLA HOME --}}
+                <div class="form-group">
+                    <a class="btn btn-md btn-primary" href="{{ route('admin.animals.index') }}">Torna alla home</a>
+                </div>
+                {{-- PULSANTE PER SALVARE I DATI INSERITI NEL DB --}}
                 <div class="form-group">
                     <button class="btn btn-md btn-success" type="submit">Salva</button>
                 </div>
