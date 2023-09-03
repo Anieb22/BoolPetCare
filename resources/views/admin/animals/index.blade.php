@@ -9,10 +9,10 @@
                     </a>
                 </button>
                 <button type="button" class="btn btn-md btn-warning mx-5">
-                    <a href="{{ route('homepage') }}"
+                    <a href="{{ url('/') }}"
                         class="link-underline link-underline-opacity-0 link-light text-black">Torna alla Home Page</a>
                 </button>
-                <table class="table rounded rounded-5 mt-4">
+                <table class="table rounded rounded-5 mt-4 table-dark">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -53,10 +53,16 @@
                                 </td>
                                 <td>{{ $animal->owner }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-primary">
+                                    <button type="button" class="btn btn-success">
                                         <a href="{{ route('admin.animals.show', ['animal' => $animal]) }}"
                                             class="link-underline link-underline-opacity-0 link-light">
                                             <i class="fas fa-eye"></i>
+                                        </a>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <a href="{{ route('admin.animals.edit', ['animal' => $animal]) }}"
+                                            class="link-underline link-underline-opacity-0 link-dark">
+                                            <i class="fas fa-pen"></i>
                                         </a>
                                     </button>
                                     <form action="{{ route('admin.animals.destroy', ['animal' => $animal]) }}"
@@ -66,12 +72,6 @@
                                         <button type="submit" class="btn btn-danger"><i
                                                 class="fas fa-trash-can"></i></button>
                                     </form>
-                                    <button type="button" class="btn btn-warning">
-                                        <a href="{{ route('admin.animals.edit', ['animal' => $animal]) }}"
-                                            class="link-underline link-underline-opacity-0 link-dark">
-                                            <i class="fas fa-pen"></i>
-                                        </a>
-                                    </button>
                                 </td>
                             </tr>
                         @endforeach
