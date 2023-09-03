@@ -9,7 +9,7 @@
                     </a>
                 </button>
                 <button type="button" class="btn btn-md btn-warning mx-5">
-                    <a href="{{ url('/') }}"
+                    <a href="{{ route('homepage') }}"
                         class="link-underline link-underline-opacity-0 link-light text-black">Torna alla Home Page</a>
                 </button>
                 <table class="table rounded rounded-5 mt-4">
