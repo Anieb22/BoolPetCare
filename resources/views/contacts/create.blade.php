@@ -50,12 +50,18 @@
                     </div>
                     {{-- FINE FORM --}}
                     {{-- SEZIONE PULSANTI --}}
-                    <div class="col-12 d-flex justify-content-between mt-5">
-                        {{-- PULSANTE RITORNO HOME --}}
-                        <a class="btn btn-md btn-primary" href="{{ url('/') }}">Torna alla Home</a>
-                        {{-- PULSANTE INVIO FORM --}}
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success ml-5">Invia Richiesta</button>
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between mt-5 mb-5">
+                            {{-- PULSANTE RITORNO HOME --}}
+                            <a class="btn btn-md btn-primary" href="{{ url('/') }}">
+                                Torna alla Home
+                            </a>
+                            {{-- PULSANTE INVIO FORM --}}
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success ml-5">
+                                    Invia Richiesta
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </form>
