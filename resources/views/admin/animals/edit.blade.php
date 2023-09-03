@@ -18,72 +18,76 @@
                 @endif
 
                 {{-- INIZIO FORM --}}
-                <form action="{{route('admin.animals.update', $animal->id)}}" method="POST">
+                <form action="{{ route('admin.animals.update', $animal->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     {{-- NOME --}}
                     <div class="form-group">
                         <label for="" class="control-label">Nome</label>
-                        <input type="text"class="form-control" id="name" name="name" value="{{ old('name') ?? $animal->name }}">
+                        <input type="text"class="form-control" id="name" name="name"
+                            value="{{ old('name') ?? $animal->name }}">
                     </div>
 
                     <div class="form-group">
                         <label for="" class="control-label">Specie</label>
-                        <input type="text"class="form-control" id="specie" name="specie" value="{{ old('specie') ?? $animal->specie }}">
+                        <input type="text"class="form-control" id="specie" name="specie"
+                            value="{{ old('specie') ?? $animal->specie }}">
                     </div>
 
-                    
+
                     <div class="form-group">
                         <label for="" class="control-label">Data di nascita</label>
-                        <input type="date"class="form-control" id="date_of_birth" name="date_of_birth" value="{{ old('date_of_birth') ?? $animal->date_of_birth }}">
+                        <input type="date"class="form-control" id="date_of_birth" name="date_of_birth"
+                            value="{{ old('date_of_birth') ?? $animal->date_of_birth }}">
                     </div>
 
                     <div class="form-group">
                         <label for="" class="control-label">Genere</label>
-                        <select class="form-select form-select-sm" aria-label="Small select example" id="genre" name="genre">
-                          <option selected value="1">Maschio</option>
-                          <option value="0">Femmina</option>
+                        <select class="form-select form-select-sm" aria-label="Small select example" id="genre"
+                            name="genre">
+                            <option selected value="1">Maschio</option>
+                            <option value="0">Femmina</option>
                         </select>
                     </div>
 
-                
+
                     <div class="form-group">
                         <label for="" class="control-label">Nome del proprietario</label>
-                        <input type="text"class="form-control" id="owner" name="owner" value="{{ old('owner') ?? $animal->owner }}">
+                        <input type="text"class="form-control" id="owner" name="owner"
+                            value="{{ old('owner') ?? $animal->owner }}">
                     </div>
 
-                   
+
                     <div class="form-group mb-3">
                         <label for="" class="control-label">Note aggiuntive</label>
                         <textarea type="text"class="form-control" id="note" name="note">{{ old('note') ?? $animal->note }}</textarea>
                     </div>
-                    
+
                     <div class="form-group mb-4">
                         <div>Seleziona la vaccinazione</div>
-                            <select class="form-control" name="vaccination[]">
-                                <option value="">Seleziona una tipologia di vaccino</option>
-                                
-                                @foreach($vaccinations as $vaccination)
-                                    <option {{ $vaccination->id }} value="{{ $vaccination->id }}">{{ $vaccination->type }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
+                        <select class="form-control" name="vaccination[]">
+                            <option value="">Seleziona una tipologia di vaccino</option>
 
+                            @foreach ($vaccinations as $vaccination)
+                                <option {{ $vaccination->id }} value="{{ $vaccination->id }}">{{ $vaccination->type }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                    {{-- DATA DI VACCINAZIONE --}}
                     <div class="form-group">
-                        
                         <label class="control-label">Data di vaccinazione</label>
                         <input type="date"class="form-control" id="vaccination_date" name="vaccination_date">
                     </div>
-
-                    <div class="col-12 d-flex justify-content-between">
-                        <a class="btn btn-md btn-primary" href="{{route('admin.animals.index')}}">Torna alla home</a>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Modifica Paziente</button>
-                        </div>
-                    </div>
-                </form>
             </div>
+            <div class="col-9 d-flex justify-content-between">
+                <a class="btn btn-md btn-primary" href="{{ route('admin.animals.index') }}">Torna alla home</a>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Modifica Paziente</button>
+                </div>
+            </div>
+            </form>
         </div>
+    </div>
     </div>
 @endsection

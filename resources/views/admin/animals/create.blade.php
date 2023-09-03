@@ -80,19 +80,19 @@
                         <label for="" class="control-label text-white mb-3 mt-2">Data di vaccinazione</label>
                         <input type="date" class="form-control" id="vaccination_date" name="vaccination_date">
                     </div>
-                </form>
-            </div>
 
-            {{-- PULSANTI --}}
-            <div class="col-9 d-flex justify-content-between mt-5 mb-5">
-                {{-- PULSANTE DI RITORNO ALLA HOME --}}
-                <div class="form-group">
-                    <a class="btn btn-md btn-primary" href="{{ route('admin.animals.index') }}">Torna alla home</a>
-                </div>
-                {{-- PULSANTE PER SALVARE I DATI INSERITI NEL DB --}}
-                <div class="form-group">
-                    <button class="btn btn-md btn-success" type="submit">Salva</button>
-                </div>
+                    {{-- PULSANTI --}}
+                    <div class="col-12 d-flex justify-content-between mt-5 mb-5">
+                        {{-- PULSANTE DI RITORNO ALLA HOME --}}
+                        <div class="form-group">
+                            <a class="btn btn-md btn-primary" href="{{ route('admin.animals.index') }}">Torna alla home</a>
+                        </div>
+                        {{-- PULSANTE PER SALVARE I DATI INSERITI NEL DB --}}
+                        <div class="form-group">
+                            <button class="btn btn-md btn-success" type="submit">Salva</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
