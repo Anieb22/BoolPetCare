@@ -21,9 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('homepage');
 
-Route::get('website/homeweb', function () {
-    return view('website.homeweb');
-});
+Route::get('/website.show', function () {
+    return view('website.show');
+})->name('website');
 
 Route::get('contacts/create', [ContactController::class, 'create'])->name('contacts.create');
 Route::post('contacts', [ContactController::class, 'store'])->name('contacts.store');
