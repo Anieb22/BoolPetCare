@@ -31,7 +31,7 @@
 <div class="jumbotron p-5 mb-4 rounded-3 position-absolute top-50 start-50 translate-middle">
     <div class="container py-5">
         <div class="logo_laravel">
-            <img src="{{ Vite::asset('resources\img\BoolPetCare@4x.png')}}" class="w-50" alt="">
+            <img src="{{  Vite::asset('public\img\BoolPetCare@4x.png')}}" class="w-50" alt="">
         </div>
         <h1 class="display-5 fw-bold text-light">
         Tutto Sotto Controllo
