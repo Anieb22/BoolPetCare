@@ -30,6 +30,7 @@
                     </div>
 
                     <div class="form-group">
+
                         <label for="" class="control-label text-white my-3">Specie</label>
                         <input type="text"class="form-control" id="specie" name="specie"
                             value="{{ old('specie') ?? $animal->specie }}">
@@ -37,6 +38,7 @@
 
 
                     <div class="form-group">
+
                         <label for="" class="control-label text-white my-3">Data di nascita</label>
                         <input type="date"class="form-control" id="date_of_birth" name="date_of_birth"
                             value="{{ old('date_of_birth') ?? $animal->date_of_birth }}">
@@ -58,7 +60,6 @@
                         <input type="text"class="form-control" id="owner" name="owner"
                             value="{{ old('owner') ?? $animal->owner }}">
                     </div>
-
 
                     <div class="form-group">
                         <label for="" class="control-label text-white my-3">Note aggiuntive</label>
