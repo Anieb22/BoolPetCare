@@ -9,8 +9,12 @@ body {
     height: 100%;
 }
 
-.pet {
-    background-image: url("resources\img\krista-mangulsone-9gz3wfHr65U-unsplash.jpg");
+.shadow-slide {
+    filter: brightness(30%);
+}
+
+img#logo {
+    width: 100%;
 }
 
 .bg-general {
