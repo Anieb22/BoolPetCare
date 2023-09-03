@@ -53,7 +53,7 @@
             <button class="navbar-toggler border border-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars text-light"></i>
             </button>
-            <div class="collapse navbar-collapse d-xl-flex justify-content-end" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item d-flex justify-content-end">
                         <a class="nav-link link-light" href="{{ route('login') }}">{{ __('Login') }}</a>
