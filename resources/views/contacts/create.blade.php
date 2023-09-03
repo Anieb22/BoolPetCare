@@ -5,7 +5,7 @@
     <div class="container d-flex justify-content-center">
         <div class="row">
             {{-- TITOLO PAGINA --}}
-            <h2 class='m-3'><i><strong>Compila il form qui sotto per ricevere informazioni</strong></i></h2>
+            <h2 class='m-3 text-light'><i><strong>Compila il form qui sotto per ricevere informazioni</strong></i></h2>
             <div class="col-12">
                 @if ($errors->any())
                     <div class="alert alert-warning" role="alert">
@@ -18,7 +18,7 @@
                 @endif
 
                 {{-- INIZIO FORM --}}
-                <form class="mt-2" action="{{ route('contacts.store') }}" method="POST">
+                <form class="mt-2 text-light" action="{{ route('contacts.store') }}" method="POST">
                     @csrf
                     {{-- CAMPO NOME --}}
                     <div class="mb-3 mt-3">
