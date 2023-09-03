@@ -19,28 +19,17 @@
 </head>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark">
+<nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid container">
         <div class="col-lg-2 col-3 col-xl-1">
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{ Vite::asset('public\img\BoolPetCare@4x.png')}}" alt=""  id="logo">
             </a>
         </div>
-        <button class="navbar-toggler border border-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars text-light"></i>
-        </button>
-        <div class="collapse navbar-collapse d-xl-flex justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                @guest
-                    <li class="nav-item">
-                        <a class="nav-link link-light" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link link-light" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                    @endif
-                @else
+        @auth
+            <!-- Visualizza solo quando l'utente è autenticato -->
+             <div class="d-xl-flex justify-content-end pt-3" id="navbarNav">
+                <ul class="">
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle link-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
@@ -56,11 +45,30 @@
                             </form>
                         </div>
                     </li>
-                @endguest
-            </ul>
-        </div>
+                </ul>
+            </div>
+        @endauth
+        @guest
+            <!-- Visualizza solo quando l'utente è un ospite -->
+            <button class="navbar-toggler border border-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars text-light"></i>
+            </button>
+            <div class="collapse navbar-collapse d-xl-flex justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link link-light" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link link-light" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif
+                </ul>
+            </div>
+        @endguest
     </div>
 </nav>
+
 
 
     <main class="overflow-hidden">
