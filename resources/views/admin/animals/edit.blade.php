@@ -65,7 +65,7 @@
 
                     <div class="form-group mb-4">
                         <div>Seleziona la vaccinazione</div>
-                        <select class="form-control" name="vaccination[]">
+                        <select class="form-control" name="vaccination">
                             <option value="">Seleziona una tipologia di vaccino</option>
 
                             @foreach ($vaccinations as $vaccination)
