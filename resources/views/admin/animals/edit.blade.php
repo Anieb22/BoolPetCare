@@ -46,7 +46,8 @@
                         <label for="" class="control-label text-white my-3">Genere</label>
                         <select class="form-select form-select-sm" aria-label="Small select example" id="genre"
                             name="genre">
-                            <option selected value="1">Maschio</option>
+                            <option selected value="">Inserisci il genere del tuo pet</option>
+                            <option value="1">Maschio</option>
                             <option value="0">Femmina</option>
                         </select>
                     </div>
