@@ -3,17 +3,17 @@
     <div class="container">
         <div class="row">
             <!--INDEX DESKTOP-->
-            <div class="col-xxl-11 col-xl-3 col-md-12 my-5 d-none d-lg-block">
-                <div class="col-12">
-                <button type="button" class="btn btn-md btn-success">
-                    <a href="{{ route('admin.animals.create') }}" class="link-underline link-underline-opacity-0 link-light">
-                        Aggiungi Pet
-                    </a>
-                </button>
-                <button type="button" class="btn btn-md btn-warning mx-5">
-                    <a href="{{ url('/') }}"
-                        class="link-underline link-underline-opacity-0 link-light text-black">Torna alla Home Page</a>
-                </button>
+            <div class="col-xxl-11 col-xl-3 my-5 d-none d-lg-block w-100">
+                <div class="col-12 w-100 d-flex justify-content-between">
+                    <button type="button" class="btn btn-md btn-success">
+                        <a href="{{ route('admin.animals.create') }}" class="link-underline link-underline-opacity-0 link-light">
+                            Aggiungi Pet
+                        </a>
+                    </button>
+                    <button type="button" class="btn btn-md btn-warning mx-5">
+                        <a href="{{ url('/') }}"
+                            class="link-underline link-underline-opacity-0 link-light text-black">Torna alla Home Page</a>
+                    </button>
                 </div>
                 <table class="table rounded rounded-5 mt-4 table-dark">
                     <thead>
@@ -69,21 +69,28 @@
                                 </td>
                                 <td>{{ $animal->owner }}</td>
                                 <td>
+                                    {{-- PULSANTE SHOW --}}
+                                    <div class="d-flex flex-column">
                                         <a href="{{ route('admin.animals.show', ['animal' => $animal]) }}"
-                                            class="link-underline link-underline-opacity-0 link-light btn btn-success">
+                                            class="link-underline link-underline-opacity-0 link-light btn btn-success mb-2">
                                             <i class="fas fa-eye"></i>
                                         </a>
+                                        {{-- PULSANTE MODIFICA --}}
                                         <a href="{{ route('admin.animals.edit', ['animal' => $animal]) }}"
-                                            class="link-underline link-underline-opacity-0 link-dark btn btn-warning">
+                                            class="link-underline link-underline-opacity-0 link-dark btn btn-warning mb-2">
                                             <i class="fas fa-pen"></i>
                                         </a>
-                                    <form action="{{ route('admin.animals.destroy', ['animal' => $animal]) }}"
-                                        method="post" class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger"><i
-                                                class="fas fa-trash-can"></i></button>
-                                    </form>
+                                        <form action="{{ route('admin.animals.destroy', ['animal' => $animal]) }}"
+                                            method="post" class="d-inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            {{-- PULSANTE ELIMINA --}}
+                                            <button type="submit" class="btn btn-danger">
+                                                <i class="fas fa-trash-can mb-2"></i>
+                                            </button>
+                                        </form>
+
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
