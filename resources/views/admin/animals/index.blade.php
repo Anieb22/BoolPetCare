@@ -3,17 +3,17 @@
     <div class="container">
         <div class="row">
             <!--INDEX DESKTOP-->
-            <div class="col-xxl-11 col-xl-3 my-5 d-none d-lg-block">
-                <div class="col-12">
-                <button type="button" class="btn btn-md btn-success">
-                    <a href="{{ route('admin.animals.create') }}" class="link-underline link-underline-opacity-0 link-light">
-                        Aggiungi Pet
-                    </a>
-                </button>
-                <button type="button" class="btn btn-md btn-warning mx-5">
-                    <a href="{{ url('/') }}"
-                        class="link-underline link-underline-opacity-0 link-light text-black">Torna alla Home Page</a>
-                </button>
+            <div class="col-xxl-11 col-xl-3 my-5 d-none d-lg-block w-100">
+                <div class="col-12 w-100 d-flex justify-content-between">
+                    <button type="button" class="btn btn-md btn-success">
+                        <a href="{{ route('admin.animals.create') }}" class="link-underline link-underline-opacity-0 link-light">
+                            Aggiungi Pet
+                        </a>
+                    </button>
+                    <button type="button" class="btn btn-md btn-warning mx-5">
+                        <a href="{{ url('/') }}"
+                            class="link-underline link-underline-opacity-0 link-light text-black">Torna alla Home Page</a>
+                    </button>
                 </div>
                 <table class="table rounded rounded-5 mt-4 table-dark">
                     <thead>
