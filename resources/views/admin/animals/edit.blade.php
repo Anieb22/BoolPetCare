@@ -48,7 +48,7 @@
                         <label for="" class="control-label text-white my-3">Genere</label>
                         <select class="form-select form-select-sm" aria-label="Small select example" id="genre"
                             name="genre">
-                            <option selected value="">Inserisci il genere del tuo pet</option>
+                            <option value="">Inserisci il genere del tuo pet</option>
                             <option value="1">Maschio</option>
                             <option value="0">Femmina</option>
                         </select>
@@ -69,10 +69,8 @@
                     <div class="form-group ">
                         <div class="control-label text-white my-3">Seleziona la vaccinazione</div>
                         <select class="form-control" name="vaccination[]">
-                            <option value="">Seleziona una tipologia di vaccino</option>
-
                             @foreach ($vaccinations as $vaccination)
-                                <option {{ $vaccination->id }} value="{{ $vaccination->id }}">{{ $vaccination->type }}
+                                <option {{ $vaccination->id == old('$vaccination->id', 'vaccination->vaccination_id') ? 'selected': '' }} value="{{ $vaccination->id }}">{{ $vaccination->type }}
                                 </option>
                             @endforeach
                         </select>

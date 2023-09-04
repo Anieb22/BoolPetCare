@@ -54,6 +54,18 @@
                                         @endforeach
                                     @endif
                                 </td>
+                                <td>
+                                    @if ($animal->vaccinations->isEmpty())
+                                        Nessuna vaccinazione
+                                    @else
+                                        @foreach ($animal->vaccinations as $vaccination)
+                                            {{ $vaccination->pivot->vaccination_date }}
+                                            {{-- @if (!$loop->last)
+                                                <br>
+                                            @endif -NON CANCELLARE- --}}
+                                        @endforeach
+                                    @endif
+                                </td>
                                 <td>{{ $animal->owner }}</td>
                                 <td>
                                         <a href="{{ route('admin.animals.show', ['animal' => $animal]) }}"

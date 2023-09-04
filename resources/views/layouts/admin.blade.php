@@ -76,7 +76,7 @@
     <main>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-3 bg-dark d-none d-lg-block">
+                <div class="col-2 bg-dark d-none d-lg-block">
                     <!-- Sidebar -->
                     <div class="bg-dark" id="nav-bar">
                         <nav id="sidebarMenu" class="d-flex flex-column">
