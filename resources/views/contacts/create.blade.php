@@ -5,7 +5,7 @@
     <div class="container d-flex justify-content-center">
         <div class="row">
             {{-- TITOLO PAGINA --}}
-            <h2 class='m-3'><i><strong>Compila il form qui sotto per ricevere informazioni</strong></i></h2>
+            <h2 class='m-3 text-light'><i><strong>Compila il form qui sotto per ricevere informazioni</strong></i></h2>
             <div class="col-12">
                 @if ($errors->any())
                     <div class="alert alert-warning" role="alert">
@@ -22,7 +22,7 @@
                 </div>
                 @endif
                 {{-- INIZIO FORM --}}
-                <form class="mt-2" action="{{ route('contacts.store') }}" method="POST">
+                <form class="mt-2 text-light" action="{{ route('contacts.store') }}" method="POST">
                     @csrf
                     {{-- CAMPO NOME --}}
                     <div class="mb-3 mt-3">
@@ -54,12 +54,18 @@
                     </div>
                     {{-- FINE FORM --}}
                     {{-- SEZIONE PULSANTI --}}
-                    <div class="col-12 d-flex justify-content-between mt-5">
-                        {{-- PULSANTE RITORNO HOME --}}
-                        <a class="btn btn-md btn-primary" href="{{ url('/') }}">Torna alla Home</a>
-                        {{-- PULSANTE INVIO FORM --}}
-                        <div class="form-group">
-                        <button type="submit" class="btn btn-success" id="liveToastBtn">Invia richiesta</button>
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between mt-5 mb-5">
+                            {{-- PULSANTE RITORNO HOME --}}
+                            <a class="btn btn-md btn-primary" href="{{ url('/') }}">
+                                Torna alla Home
+                            </a>
+                            {{-- PULSANTE INVIO FORM --}}
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success ml-5">
+                                    Invia Richiesta
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </form>
