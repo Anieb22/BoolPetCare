@@ -79,6 +79,10 @@
                         <a href="{{ route('contacts.create') }}" class="btn btn-success btn-lg mt-4"
                             type="button">Contattaci
                         </a>
+                        {{-- PULSANTE PRESENTAZIONE PROGETTO/TEAM --}}
+                            <a href="{{ route('website.show') }}" class="btn btn-success btn-lg mt-4"
+                                type="button">Website informativo
+                            </a>
                     </div>
                 </div>
             </div>
@@ -102,16 +106,15 @@
                         <p class="col-md-10 fs-4 text-light mt-3">Monitora le schede sanitarie, le scadenze dei vaccini e le
                             attività quotidiane in un'unica piattaforma intuitiva.
                         </p>
-
                         {{-- PULSANTI --}}
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex d-md-flex justify-content-md-between flex-column flex-md-row col-12 col-md-12">
                             {{-- PULSANTE CONTATTI --}}
                             <a href="{{ route('contacts.create') }}" class="btn btn-success btn-lg mt-4"
                                 type="button">Contattaci
                             </a>
     
                             {{-- PULSANTE PRESENTAZIONE PROGETTO/TEAM --}}
-                            <a href="{{ route('website') }}" class="btn btn-success btn-lg mt-4"
+                            <a href="{{ route('website.show') }}" class="btn btn-success btn-lg mt-4"
                                 type="button">Website informativo
                             </a>
                         </div>
