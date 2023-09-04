@@ -66,7 +66,7 @@
                         <textarea type="text"class="form-control" id="note" name="note">{{ old('note') ?? $animal->note }}</textarea>
                     </div>
                     {{-- SELEZIONE VACCINAZIONI --}}
-                    <div class="form-group ">
+                    <!--<div class="form-group ">
                         <div class="control-label text-white my-3">Seleziona la vaccinazione</div>
                         <select class="form-control" name="vaccination[]">
                             @foreach ($vaccinations as $vaccination)
@@ -79,7 +79,7 @@
                     <div class="form-group">
                         <label class="control-label text-white my-3">Data di vaccinazione</label>
                         <input type="date"class="form-control" id="vaccination_date" name="vaccination_date">
-                    </div>
+                    </div>-->
             </div>
             {{-- PULSANTI --}}
             <div class="col-9 d-flex justify-content-between mt-5 mb-4">

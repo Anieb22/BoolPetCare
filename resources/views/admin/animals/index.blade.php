@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <!--INDEX DESKTOP-->
-            <div class="col-xxl-12 col-xl-6 my-5 d-none d-lg-block">
+            <div class="col-xxl-11 col-xl-3 my-5 d-none d-lg-block">
                 <div class="col-12">
                 <button type="button" class="btn btn-md btn-success">
                     <a href="{{ route('admin.animals.create') }}" class="link-underline link-underline-opacity-0 link-light">
@@ -24,6 +24,7 @@
                             <th scope="col">Data di Nascita</th>
                             <th scope="col">Genere</th>
                             <th scope="col">Vaccinazioni</th>
+                            <th scope="col">Data di Vaccinazione</th>
                             <th scope="col">Proprietario</th>
                             <th scope="col">Azioni</th>
                         </tr>
@@ -145,7 +146,21 @@
                         @endif
                         </td><br>
                     </tr>
-                    <hr> 
+                    <hr>
+                    <th scope="col">Data Di Vaccinazione:</th>
+                    <td>
+                        @if ($animal->vaccinations->isEmpty())
+                            Nessuna vaccinazione
+                        @else
+                            @foreach ($animal->vaccinations as $vaccination)
+                                {{ $vaccination->pivot->vaccination_date }}
+                                {{-- @if (!$loop->last)
+                                    <br>
+                                @endif -NON CANCELLARE- --}}
+                            @endforeach
+                        @endif
+                    </td>
+                    <hr>
                     <tr>
                         <th scope="col">Proprietario:</th>
                         <td>{{ $animal->owner }}</td>
