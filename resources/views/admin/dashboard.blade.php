@@ -2,15 +2,10 @@
 
 @section('content')
     <div class="container">
-        <h2 class="fs-4 text-secondary my-4">
-            {{ __('Dashboard') }}
-        </h2>
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card">
-                    <div class="card-header">{{ __('User Dashboard') }}</div>
-
-                    <div class="card-body">
+                    <div class="card-body bg-dark text-light">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
@@ -22,5 +17,7 @@
                 </div>
             </div>
         </div>
+        <div class="col-9 d-flex justify-content-between mt-5 mb-4">
+                <a class="btn btn-md btn-success" href="{{ route('admin.animals.index') }}">Vai alla Dashboard</a>
     </div>
 @endsection
