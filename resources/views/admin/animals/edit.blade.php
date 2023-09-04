@@ -48,8 +48,8 @@
                         <label for="" class="control-label text-white my-3">Genere</label>
                         <select class="form-select form-select-sm" aria-label="Small select example" id="genre"
                             name="genre">
-                            <option value="1" selected>Maschio</option>
-                            <option value="0">Femmina</option>
+                            <option value="0" selected>Maschio</option>
+                            <option value="1">Femmina</option>
                         </select>
                     </div>
 

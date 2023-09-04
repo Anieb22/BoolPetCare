@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <!--INDEX DESKTOP-->
-            <div class="col-xxl-11 col-xl-3 my-5 d-none d-lg-block">
+            <div class="col-xxl-11 col-xl-3 col-md-12 my-5 d-none d-lg-block">
                 <div class="col-12">
                 <button type="button" class="btn btn-md btn-success">
                     <a href="{{ route('admin.animals.create') }}" class="link-underline link-underline-opacity-0 link-light">
@@ -38,9 +38,9 @@
                                 <td>{{ $animal->date_of_birth }}</td>
                                 <td>
                                     @if ($animal->genre)
-                                        maschio
+                                        Femmina
                                     @else
-                                        femmina
+                                        Maschio
                                     @endif
                                 </td>
                                 <td>
