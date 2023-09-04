@@ -7,7 +7,7 @@
                 <div class="col-12 w-100 d-flex justify-content-between">
                     <button type="button" class="btn btn-md btn-success">
                         <a href="{{ route('admin.animals.create') }}" class="link-underline link-underline-opacity-0 link-light">
-                            Aggiungi Pet
+                            Aggiungi Animale
                         </a>
                     </button>
                     <button type="button" class="btn btn-md btn-warning mx-5">
