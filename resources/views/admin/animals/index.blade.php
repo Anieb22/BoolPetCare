@@ -85,7 +85,7 @@
                                             @csrf
                                             @method('DELETE')
                                             {{-- PULSANTE ELIMINA --}}
-                                            <button type="submit" class="btn btn-danger">
+                                            <button type="submit" class="btn btn-danger w-100">
                                                 <i class="fas fa-trash-can mb-2"></i>
                                             </button>
                                         </form>
