@@ -38,10 +38,10 @@
                         <a id="navbarDropdown" class="nav-link dropdown-toggle link-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('admin.animals.index') }}">Dashboard</a>
-                            <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-light" href="{{ route('admin.animals.index') }}">Dashboard</a>
+                            <a class="dropdown-item text-light" href="{{ url('profile') }}">{{__('Profile')}}</a>
+                            <a class="dropdown-item text-light" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -76,7 +76,7 @@
     <main>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-3 bg-dark">
+                <div class="col-3 bg-dark d-none d-lg-block">
                     <!-- Sidebar -->
                     <div class="bg-dark" id="nav-bar">
                         <nav id="sidebarMenu" class="d-flex flex-column">
@@ -97,7 +97,7 @@
                     </div>
 
                 </div>
-                <div class="col-9 bg-dark overflow-y-visible">
+                <div class="col-lg-9 bg-dark col-12">
                     @yield('content')
                 </div>
             </div>

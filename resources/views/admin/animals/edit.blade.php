@@ -85,9 +85,9 @@
             </div>
             {{-- PULSANTI --}}
             <div class="col-9 d-flex justify-content-between mt-5 mb-4">
-                <a class="btn btn-md btn-primary" href="{{ route('admin.animals.index') }}">Torna alla home</a>
+                <a class="btn btn-md btn-danger" href="{{ route('admin.animals.index') }}">Torna indietro</a>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-md btn-warning">Modifica Paziente</button>
+                    <button type="submit" class="btn btn-md btn-success">Modifica Paziente</button>
                 </div>
             </div>
             </form>
