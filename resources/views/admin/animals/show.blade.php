@@ -66,7 +66,8 @@
                                         Nessuna vaccinazione
                                     @else
                                         @foreach ($animal->vaccinations as $vaccination)
-                                            {{ $vaccination->type }}
+                                            {{ $vaccination->type }} in data:
+                                            {{ $vaccination->pivot->vaccination_date }}
                                             {{-- @if (!$loop->last)
                                                 <br>
                                             @endif -NON CANCELLARE- --}}
