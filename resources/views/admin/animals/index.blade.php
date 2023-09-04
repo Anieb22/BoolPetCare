@@ -3,7 +3,8 @@
     <div class="container">
         <div class="row">
             <!--INDEX DESKTOP-->
-            <div class="col-12 my-5 d-none d-lg-block">
+            <div class="col-xxl-12 col-xl-6 my-5 d-none d-lg-block">
+                <div class="col-12">
                 <button type="button" class="btn btn-md btn-success">
                     <a href="{{ route('admin.animals.create') }}" class="link-underline link-underline-opacity-0 link-light">
                         Aggiungi Pet
@@ -13,6 +14,7 @@
                     <a href="{{ url('/') }}"
                         class="link-underline link-underline-opacity-0 link-light text-black">Torna alla Home Page</a>
                 </button>
+                </div>
                 <table class="table rounded rounded-5 mt-4 table-dark">
                     <thead>
                         <tr>
@@ -76,7 +78,7 @@
                 </table>
             </div>
             <!--INDEX MOBILE-->
-            <div class="col-12 my-3 d-lg-none d-flex justify-content-between">
+            <div class="col-12 my-3 d-xl-none d-flex justify-content-between">
                 <button type="button" class="btn btn-md btn-success">
                     <a href="{{ route('admin.animals.create') }}" class="link-underline link-underline-opacity-0 link-light">
                         Aggiungi Pet
