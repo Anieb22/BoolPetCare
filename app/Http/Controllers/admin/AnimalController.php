@@ -92,9 +92,8 @@ class AnimalController extends Controller
         $form_data = $request->all();      
         
         $animal->update($form_data);
-
         if($request->has('vaccination')){
-            $animal->vaccinations()->attach($request->vaccination);
+            $animal->vaccinations()->attach($request->vaccination, ['vaccination_date'=>$form_data['vaccination_date']]);
         }
 
         return redirect()->route('admin.animals.index', $animal->id);

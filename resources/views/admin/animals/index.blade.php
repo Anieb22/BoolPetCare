@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <!--INDEX DESKTOP-->
-            <div class="col-9 my-5 d-none d-lg-block">
+            <div class="col-12 my-5 d-none d-lg-block">
                 <button type="button" class="btn btn-md btn-success">
                     <a href="{{ route('admin.animals.create') }}" class="link-underline link-underline-opacity-0 link-light">
                         Aggiungi Pet
