@@ -83,6 +83,13 @@ class VaccinationController extends Controller
      */
     public function destroy(Vaccination $vaccination)
     {
-        //
+
+        $vaccination->animals()->detach();
+        
+        $name_vaccination = $vaccination->name;
+
+        $vaccination->delete();
+
+        return redirect()->route('admin.vaccinations.index')->with('message', "$name_vaccination vaccinazione eliminata");
     }
 }

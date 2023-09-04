@@ -60,6 +60,30 @@
     {{-- SFONDO BIANCO - VISIONE E MISSIONE --}}
 
     <div class="container mb-5">
+        {{-- PARAGRAFO 2 + IMMAGINE WEB CANE--}}
+        <div class="row mt-5">
+            {{-- COL LEFT - IMMAGINE CANE --}}
+            <div class="col-12 col-md-6">
+                <img src="{{ Vite::asset('resources\img\estratto.jpg') }}" class="d-block w-100 object-fit-fill" alt="...">
+            </div>
+            {{-- COL RIGHT --}}
+            <div class="col-12 col-md-6">
+                <div class="d-flex h-100 align-items-center">
+                    <ul class="text-light fs-5">
+                        Ogni animale merita le migliori cure. La nostra piattaforma ti aiuta a tenere traccia delle vaccinazioni, degli appuntamenti veterinari e della salute generale degli animali registrati.
+                        Funzionalità principali:
+                        <p>Funzionalità principali:</p>
+                        <li>🐾 Registro sanitario completo per il tuo animale domestico.</li>
+                        <li>📅 Promemoria per gli appuntamenti veterinari e le vaccinazioni.</li>
+                        <li>📈 Monitora la salute e il benessere del tuo animale nel tempo.</li>
+                        <li>🏥 Archiviazione sicura dei documenti medici.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
         {{-- SLOGAN FINALE --}}
         <div class="row">
             <div class="col-12">

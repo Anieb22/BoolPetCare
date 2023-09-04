@@ -110,6 +110,7 @@ class AnimalController extends Controller
         $animal->vaccinations()->sync([]);
 
         $animal->delete();
-        return redirect()->route('admin.animals.index');
+        
+        return redirect()->route('admin.animals.index')->with('message', 'Animale cancellato');
     }
 }
