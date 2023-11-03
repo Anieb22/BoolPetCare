@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger("vaccination_id")->nullable();
             $table->foreign("vaccination_id")->references("id")->on("vaccinations");
 
-            $table->date('vaccination_date')->default('0000-00-00');
+            $table->date('vaccination_date')->nullable();
         });
     }
 
